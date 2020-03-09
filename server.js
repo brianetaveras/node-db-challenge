@@ -1,14 +1,11 @@
 const express = require('express');
 const server = express()
 
+const projectRoute = require('./routes/project-route')
 
 
 
-
-
-
-
-
+server.use('/projects', projectRoute)
 
 
 

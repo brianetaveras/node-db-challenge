@@ -3,14 +3,14 @@ exports.up = async function(knex) {
 		table.increments("id")
 		table.text("name").notNull()
         table.text("description")
-        table.boolean('completed').defaultTo(false)
+        table.boolean('completed').defaultTo('false')
 	})
 
 	await knex.schema.createTable("tasks", (table) => {
 		table.increments("id")
         table.text("description").notNull()
         table.text('notes').notNull()
-        table.boolean('completed').defaultTo(false)
+        table.boolean('completed').defaultTo('false')
         table.integer('project_id').references('id').inTable('projects')
 	})
 
