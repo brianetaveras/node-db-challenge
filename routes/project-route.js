@@ -20,5 +20,13 @@ router.get('/:id', async (req, res, next)=>{
     }
 })
 
+router.post('/', async (req, res, next) => {
+    try {
+        res.json(await db.insert(req.body))
+    } catch(err) {
+        next(err)
+    }
+})
+
 
 module.exports = router;

@@ -3,19 +3,11 @@ const db = require('../data/config');
 
 class ProjectModel{
     async getAll(){
-        return await db.table('projects')
+        return await db.table('resources')
     };
 
-    async getById(id){
-
-        const projects = await db.table("projects")
-        .where('projects.id', id)
-			
-        return projects
-    }
-
     async insert(data){
-        return await db('projects')
+        return await db('resources')
         .insert({
             name: data.name,
             description: data.description,
