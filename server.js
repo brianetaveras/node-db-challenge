@@ -19,7 +19,27 @@ server.use((err, req, res, next) => {
 })
 
 
-server.listen(4000, ()=>{
-    console.log('http://localhost:4000')
+server.get('/', (req, res)=>{
+    res.json({
+        message: 'Welcome!'
+    })
+})
+
+
+
+const PORT = 4000;
+
+server.listen(PORT, () => {
+
+    console.log(
+        `
+     --------------------------------------------------------------
+     |       ___                                                   |
+     |      (^o^) <Server is running on http://localhost:${PORT}      |
+     |     ((___))                                                 |
+     |       ^ ^                                                   |
+     --------------------------------------------------------------
+            `
+    );
 })
 

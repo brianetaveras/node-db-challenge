@@ -20,6 +20,7 @@ exports.up = async function(knex) {
         table.text('description')
 
 	})
+	
 	await knex.schema.createTable("project_resources", (table) => {
 		table.increments("id")
         table.integer("resource_id").references('id').inTable('resources')
